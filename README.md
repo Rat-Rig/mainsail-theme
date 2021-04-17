@@ -1,8 +1,6 @@
-# Dracula for [Mainsail](https://docs.mainsail.xyz/)
+# Rat Rig theme for [Mainsail](https://docs.mainsail.xyz/)
 
-> A dark theme for [Mainsail](https://docs.mainsail.xyz/).
-
-![Screenshot](./screenshot.png)
+> Official Rat Rig theme for [Mainsail](https://docs.mainsail.xyz/).
 
 ## Install
 

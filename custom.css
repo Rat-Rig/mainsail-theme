@@ -1,144 +1,274 @@
 /*
-This is a dark theme for mainsail.
-It is inspired by the DRACULA theme.
-
-Website:        https://draculatheme.com
-GitHub:         https://github.com/dracula
-
-DRACULA COLOR PALETTE
-    Background:  #282a36;
-    CurrentLine: #44475a;
-    Foreground:  #f8f8f2;
-    Comment:     #6272a4;
-    Cyan:        #8be9fd;
-    Green:       #50fa7b;
-    LightGreen:  #8aff80;
-    Orange:      #ffb86c;
-    Pink:        #ff79c6;
-    Purple:      #bd93f9;
-    Red:         #ff5555;
-    Yellow:      #f1fa8c;
+This is the Rat Rig theme for mainsail.
+It is adapted from the Dracula Mainsail Theme (https://github.com/steadyjaw/dracula-mainsail-theme).
 */
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 
 :root {
-    --Primary:        #bd93f9;    /*Dracula:Purple*/
-    --Secondary:      #44475a;    /*Dracula:CurrentLine*/
-    --Green:          #50fa7b;    /*Dracula:Green*/
-    --Red:            #ff5555;    /*Dracula:Red*/
-    --Warnings:       #ffb86c;    /*Dracula:Orange*/
-    --Text:           #f8f8f2;    /*Dracula:Foreground*/
-    --DarkerText:     #f5f5f2;    
-    --Background:     #44475a;    /*Dracula:CurrentLine*/
-    --DarkBackground: #282a36;    /*Dracula:Background*/
-    --Toolbars:       #44475a;    /*Dracula:CurrentLine*/
-    --Sheets:         #282a36;    /*Dracula:Background*/
+  --md-primary-fg-color: hsla(88, 50%, 53%, 1);
+  --md-primary-fg-color--light: hsla(88, 50%, 60%, 1);
+  --md-primary-fg-color--dark: hsla(92, 48%, 42%, 1);
+  --md-primary-bg-color: hsla(0, 0%, 100%, 1);
+  --md-primary-bg-color--light: hsla(0, 0%, 100%, 0.7);
+  --md-accent-fg-color: hsla(40, 100%, 50%, 1);
+  --md-accent-fg-color--transparent: hsla(40, 100%, 50%, 0.1);
+  --md-accent-bg-color: hsla(0, 0%, 0%, 0.87);
+  --md-accent-bg-color--light: hsla(0, 0%, 0%, 0.54);
+  --Primary: #76fb00; /*Dracula:Purple*/
+  --Secondary: rgb(214, 153, 31); /*Dracula:CurrentLine*/
+  --Green: rgb(73, 104, 32); /*Dracula:Green*/
+  --Red: #ff5555; /*Dracula:Red*/
+  --Warnings: hsla(40, 100%, 50%, 1); /*Dracula:Orange*/
+  --Text: #202020; /*Dracula:Foreground*/
+  --TitleTextColor: rgb(212, 212, 212);
+  --White: #fff;
+  --DarkerText: #252525;
+  --Background: rgb(212, 212, 212); /*Dracula:CurrentLine*/
+  --DarkBackground: rgb(255, 255, 255); /*Dracula:Background*/
+  --Toolbars: #2b2b2b; /*Dracula:CurrentLine*/
+  --Sheets: rgb(231, 231, 231); /*Dracula:Background*/
 }
 
+#nav-header {
+  background-color: var(--Primary);
+}
+
+#nav-header .v-toolbar__title {
+  font-family: "Bebas Neue";
+}
+
+nav ul.navi .nav-link {
+  color: var(--TitleTextColor) !important;
+  font-family: "Bebas Neue";
+  font-size: 15px;
+}
+
+nav ul.navi .theme--dark.v-icon {
+  color: var(--TitleTextColor) !important;
+}
+
+/* Buttons */
+.v-chip.v-chip--outlined.v-chip.v-chip {
+  background-color: var(--White) !important;
+}
+.v-chip.v-chip--outlined.v-chip.v-chip.v-chip--clickable {
+  background-color: var(--Primary) !important;
+}
+.v-btn__content {
+  font-family: "Bebas Neue";
+}
+
+/* Context menu */
+.theme--dark.v-list-item:not(.v-list-item--active):not(.v-list-item--disabled) {
+  color: var(--Text) !important;
+}
+
+/* Dialog */
+
+.v-dialog .v-toolbar__content .v-btn__content {
+  color: var(--TitleTextColor) !important;
+}
+
+.v-dialog .theme--dark.v-toolbar.v-sheet button .theme--dark.v-icon {
+  color: var(--TitleTextColor) !important;
+}
+
+/* Tables */
+.theme--dark.v-data-table
+  > .v-data-table__wrapper
+  > table
+  > tbody
+  > tr:hover:not(.v-data-table__expanded__content):not(.v-data-table__empty-wrapper) {
+  background: var(--Background);
+}
+
+.theme--dark.v-data-table .v-data-footer {
+  border-top: thin solid var(--Background) !important;
+}
+
+.v-data-table-header th.active .v-data-table-header__icon,
+.v-data-table-header th:hover .v-data-table-header__icon {
+  color: var(--Text) !important;
+}
+
+.theme--dark.v-data-table .v-data-table-header th.sortable.active,
+.theme--dark.v-data-table
+  .v-data-table-header
+  th.sortable.active
+  .v-data-table-header__icon,
+.theme--dark.v-data-table .v-data-table-header th.sortable:hover {
+  color: var(--Text) !important;
+}
+
+.theme--dark.v-data-table > .v-data-table__wrapper > table > thead > tr > th {
+  color: var(--Text) !important;
+}
+.theme--dark.v-select .v-select__selection--comma,
+.theme--light.v-select.v-text-field--solo-inverted.v-input--is-focused
+  .v-select__selection--comma {
+  color: var(--Text) !important;
+}
+
+.theme--dark.v-data-table
+  > .v-data-table__wrapper
+  > table
+  > tbody
+  > tr:not(:last-child)
+  > td:last-child,
+.theme--dark.v-data-table
+  > .v-data-table__wrapper
+  > table
+  > tbody
+  > tr:not(:last-child)
+  > td:not(.v-data-table__mobile-row),
+.theme--dark.v-data-table
+  > .v-data-table__wrapper
+  > table
+  > tbody
+  > tr:not(:last-child)
+  > th:last-child,
+.theme--dark.v-data-table
+  > .v-data-table__wrapper
+  > table
+  > tbody
+  > tr:not(:last-child)
+  > th:not(.v-data-table__mobile-row),
+.theme--dark.v-data-table
+  > .v-data-table__wrapper
+  > table
+  > thead
+  > tr:last-child
+  > th {
+  border-bottom: thin solid var(--Background) !important;
+}
 
 /* Change Color of text */
-.v-btn__content .v-toolbar__title {
-    color: var(--Text) !important;
+.theme--dark.v-toolbar.v-sheet {
+  color: var(--TitleTextColor) !important;
+  font-family: "Bebas Neue" !important;
 }
-.text--darken-2 {
-    color: var(--Text) !important;
+.theme--dark.v-toolbar.v-sheet .theme--dark.v-icon {
+  color: var(--TitleTextColor) !important;
 }
-.subheading {
-    color: var(--Text) !important;
+.theme--dark.v-toolbar.v-sheet button .theme--dark.v-icon {
+  color: var(--Text) !important;
 }
-.theme--dark.v-icon, .v-btn__content, .v-text-field__suffix {
-    color: var(--Text) !important;
-}
-.theme--dark.v-input, .theme--dark.v-input input, .theme--dark.v-input textarea {
-    color: var(--Text) !important;
+.v-app-bar.theme--dark.v-toolbar.v-sheet button .theme--dark.v-icon {
+  color: var(--TitleTextColor) !important;
 }
 
+.theme--dark.v-toolbar.v-sheet button.error .theme--dark.v-icon {
+  color: var(--White) !important;
+}
+.v-btn__content .v-toolbar__title {
+  color: var(--Text) !important;
+}
+.error .v-btn__content,
+.error .v-btn__content .v-icon {
+  color: var(--White) !important;
+}
+.text--darken-2 {
+  color: var(--Text) !important;
+}
+.subheading {
+  color: var(--TitleTextColor) !important;
+}
+.theme--dark.v-icon,
+.v-btn__content,
+.v-text-field__suffix {
+  color: var(--Text) !important;
+}
+.theme--dark.v-input,
+.theme--dark.v-input input,
+.theme--dark.v-input textarea {
+  color: var(--Text) !important;
+}
 
 /* Change Primary color */
 .v-application .primary {
-    background-color: var(--Primary) !important;
-    border-color: var(--Primary) !important;
-}
-.v-application .primary--text {
-    color: var(--Primary) !important;
-    caret-color: var(--Primary) !important;
-}
-.v-application .blue--text {
-    color: var(--Primary) !important;
-    caret-color: var(--Primary) !important;
-}
-.v-application .info {
-    background-color: var(--Primary) !important;
-    border-color: var(--Primary) !important;
-}
-.v-text-field.v-text-field--solo:not(.v-text-field--solo-flat)>.v-input__control>.v-input__slot:focus-within {
-    border: thin solid var(--Primary) !important;
-}
-.v-text-field.v-text-field--solo .v-input__control input {
-    caret-color: var(--Primary);
-}
-.theme--dark.v-color-picker .v-color-picker__input input {
-    border: thin solid var(--Primary);
-    color: var(--Text);
+  background-color: var(--Primary) !important;
+  border-color: var(--Primary) !important;
 }
 
+.v-application .blue--text {
+  color: var(--Primary) !important;
+  caret-color: var(--Primary) !important;
+}
+.v-application .info {
+  background-color: var(--Primary) !important;
+  border-color: var(--Primary) !important;
+}
+.v-text-field.v-text-field--solo:not(.v-text-field--solo-flat)
+  > .v-input__control
+  > .v-input__slot:focus-within {
+  border: thin solid var(--Primary) !important;
+}
+.v-text-field.v-text-field--solo .v-input__control input {
+  caret-color: var(--Primary);
+}
+.theme--dark.v-color-picker .v-color-picker__input input {
+  border: thin solid var(--Primary);
+  color: var(--Text);
+}
 
 /* Change Secondary color */
 .v-application .secondary {
-    background-color: var(--Secondary) !important;
-    border-color: var(--Secondary) !important;
+  background-color: var(--Secondary) !important;
+  border-color: var(--Secondary) !important;
 }
 .theme--dark.v-chip {
-    color: var(--Text) !important;
-    background-color: var(--Secondary) !important;
+  color: var(--Text) !important;
+  background-color: var(--Secondary) !important;
 }
-
-
 
 /* Change Background and Toolbars */
 body {
-    background-color: var(--Background);
+  background-color: var(--Background);
 }
 .v-sheet {
-    border-color: var(--Background);
+  border-color: var(--Background);
 }
-
 
 /* Darkest Color / Grey darkend */
 
 .theme--dark.v-application {
-    background: var(--DarkBackground);
-    color: var(--Text);
+  background: var(--DarkBackground);
+  color: var(--Text);
 }
 .v-application .grey.darken-3 {
-    background-color: var(--DarkBackground) !important;
-    border-color: var(--DarkBackground) !important;
+  background-color: var(--DarkBackground) !important;
+  border-color: var(--DarkBackground) !important;
+  color: var(--Text);
 }
-.theme--dark.v-text-field--solo>.v-input__control>.v-input__slot {
-    background: var(--DarkBackground) !important;
+.theme--dark.v-text-field--solo > .v-input__control > .v-input__slot {
+  background: var(--DarkBackground) !important;
+  color: var(--Text);
 }
 .theme--dark.v-data-table {
-    background-color: var(--DarkBackground) !important;
+  background-color: var(--DarkBackground) !important;
+  color: var(--Text);
 }
-.v-data-table>.v-data-table__wrapper>table  {
-    background-color: var(--DarkBackground) !important;
+.v-data-table > .v-data-table__wrapper > table {
+  background-color: var(--DarkBackground) !important;
 }
 .theme--dark.v-card {
-    /*background-color: var(--DarkBackground);*/
+  /*background-color: var(--DarkBackground);*/
+  color: var(--Text);
 }
 .theme--dark.v-btn.v-btn--has-bg {
-    background-color: var(--DarkBackground);
+  background-color: var(--DarkBackground);
 }
-
 
 /* Sheets - such as "Controls" or "Temperatures */
 .theme--dark.v-sheet {
-    background-color: var(--Sheets);
+  background-color: var(--Sheets);
 }
-.v-toolbar__content, .v-toolbar__extension {
-    background-color: var(--Toolbars);
-    box-shadow: 0 5px 10px 0 rgb(0 0 0 / 15%);
+.v-toolbar__content,
+.v-toolbar__extension {
+  background-color: var(--Toolbars);
+  box-shadow: 0 5px 10px 0 rgb(0 0 0 / 15%);
+  color: var(--TitleTextColor);
 }
-
 
 /* The Icons
 .mdi-set, .mdi:before {
@@ -146,70 +276,67 @@ body {
 }
 */
 
-
 /* vCard and subtitle Text Color */
-.theme--dark.v-card .v-card__subtitle, .theme--dark.v-card>.v-card__text {
-    color: var(--DarkerText);
+.theme--dark.v-card .v-card__subtitle,
+.theme--dark.v-card > .v-card__text {
+  color: var(--DarkerText);
 }
 
 /* green elements */
 .v-application .green--text {
-    color: var(--Green) !important;
-    caret-color: var(--Green) !important;
+  color: var(--Green) !important;
+  caret-color: var(--Green) !important;
 }
 .v-application .green {
-    background-color: var(--Green) !important;
-    border-color: var(--Green) !important;
+  background-color: var(--Green) !important;
+  border-color: var(--Green) !important;
 }
 .v-application .green--text.text--darken-1 {
-    color: var(--Green) !important;
-    caret-color: var(--Green) !important;
+  color: var(--Green) !important;
+  caret-color: var(--Green) !important;
 }
-.v-toast__item--success{
-    background-color: var(--Green) !important;
-    color: #000 !important;
+.v-toast__item--success {
+  background-color: var(--Green) !important;
+  color: #000 !important;
 }
-
 
 /* warnings and orange elements */
 .v-application button.warning {
-    background: var(--Warnings) !important;
-    background-color: var(--Warnings);Orange) !important;
-    border-color: var(--Warnings);Orange) !important;
+  background: var(--Warnings) !important;
+  background-color: var(--Warnings) !important;
+  border-color: var(--Warnings) !important;
 }
 .theme--dark.warning--text {
-    color: var(--Warnings) !important;
+  color: var(--Warnings) !important;
 }
-.v-toast__item--warning{
-    background-color: var(--Warnings) !important;
+.v-toast__item--warning {
+  background-color: var(--Warnings) !important;
 }
 .v-application .orange {
-    background: var(--Warnings) !important;
-    background-color: var(--Warnings);Orange) !important;
+  background: var(--Warnings) !important;
+  background-color: var(--Warnings) !important;
 }
-
 
 /* red elements */
 .v-application .red {
-    background-color: var(--Red) !important;
-    border-color: var(--Red) !important;
+  background-color: var(--Red) !important;
+  border-color: var(--Red) !important;
 }
 .v-application .red--text.text--darken-1 {
-    color: var(--Red) !important;
-    caret-color: var(--Red) !important;
+  color: var(--Red) !important;
+  caret-color: var(--Red) !important;
 }
 .v-application .red--text {
-    color: var(--Red) !important;
-    caret-color: var(--Red) !important;
+  color: var(--Red) !important;
+  caret-color: var(--Red) !important;
 }
 .v-application .error {
-    background-color: var(--Red) !important;
-    border-color: var(--Red) !important;
+  background-color: var(--Red) !important;
+  border-color: var(--Red) !important;
 }
-.v-toast__item--error{
-    background-color: var(--Red) !important;
+.v-toast__item--error {
+  background-color: var(--Red) !important;
 }
-
 
 /*
     CHANGE content of icons
@@ -218,55 +345,54 @@ body {
 
 /* Thermometer to Flask */
 .mdi-thermometer-lines:before {
-    content: "\F0828";
+  content: "\F0828";
 }
 /* Heatbed to Flames */
 .mdi-radiator-disabled:before {
-    content: "\F0238";
-    color: var(--Foreground);
+  content: "\F0238";
+  color: var(--Foreground);
 }
 /* Nozzle to Saw */
 .mdi-printer-3d-nozzle:before {
-    content: "\F0E22";
-    color: var(--Foreground);
+  content: "\F0E22";
+  color: var(--Foreground);
 }
 /* Snowflake to Reactory */
 .mdi-snowflake:before {
-    content: "\F0708";
+  content: "\F0708";
 }
 /* Controls to Infected Hand */
 .mdi-gamepad:before {
-    content: "\F1258";
+  content: "\F1258";
 }
 /* Home to Castle */
 .mdi-home:before {
-    content: "\F011A";
+  content: "\F011A";
 }
 /* "Cog"/Gearwheel to Spider */
 .mdi-cog:before {
-    content: "\F11EA";
+  content: "\F11EA";
 }
 /* Dipswitch to Bloodbag */
 .mdi-dip-switch:before {
-    content: "\F0CEC";
+  content: "\F0CEC";
 }
 /* Code-Tags to Spider-web */
 .mdi-code-tags:before {
-    content: "\F0BCA";
+  content: "\F0BCA";
 }
 /* Information to Thunderbolt */
 .mdi-information:before {
-    content: "\F140C";
+  content: "\F140C";
 }
 /* Fan to Knife */
 .mdi-fan:before {
-    content: "\F09FB";
+  content: "\F09FB";
 }
 /* Connection to magnet */
 .mdi-connection:before {
-    content: "\F0348";
+  content: "\F0348";
 }
-
 
 /* MDI
 mdi-bat: F0B5F
