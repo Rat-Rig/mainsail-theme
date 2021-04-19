@@ -20,6 +20,7 @@ It is adapted from the Dracula Mainsail Theme (https://github.com/steadyjaw/drac
   --Red: #ff5555; /*Dracula:Red*/
   --Warnings: hsla(40, 100%, 50%, 1); /*Dracula:Orange*/
   --Text: #202020; /*Dracula:Foreground*/
+  --LightText: #484a4e;
   --TitleTextColor: rgb(212, 212, 212);
   --White: #fff;
   --DarkerText: #252525;
@@ -45,6 +46,11 @@ nav ul.navi .nav-link {
 
 nav ul.navi .theme--dark.v-icon {
   color: var(--TitleTextColor) !important;
+}
+
+/* Label */
+.theme--dark.v-label {
+  color: var(--LightText) !important;
 }
 
 /* Buttons */
@@ -191,8 +197,8 @@ nav ul.navi .theme--dark.v-icon {
 }
 
 .v-application .blue--text {
-  color: var(--Primary) !important;
-  caret-color: var(--Primary) !important;
+  color: var(--md-primary-fg-color) !important;
+  caret-color: var(--md-primary-fg-color) !important;
 }
 .v-application .info {
   background-color: var(--Primary) !important;
@@ -201,10 +207,10 @@ nav ul.navi .theme--dark.v-icon {
 .v-text-field.v-text-field--solo:not(.v-text-field--solo-flat)
   > .v-input__control
   > .v-input__slot:focus-within {
-  border: thin solid var(--Primary) !important;
+  border: thin solid var(--md-primary-fg-color) !important;
 }
 .v-text-field.v-text-field--solo .v-input__control input {
-  caret-color: var(--Primary);
+  caret-color: var(--md-primary-fg-color);
 }
 .theme--dark.v-color-picker .v-color-picker__input input {
   border: thin solid var(--Primary);
@@ -240,16 +246,25 @@ body {
   border-color: var(--DarkBackground) !important;
   color: var(--Text);
 }
+.v-text-field.v-text-field--solo:not(.v-text-field--solo-flat)
+  > .v-input__control
+  > .v-input__slot {
+  box-shadow: 0 3px 1px -2px rgb(0 0 0 / 15%), 0 2px 2px 0 rgb(0 0 0 / 9%),
+    0 1px 5px 0 rgb(0 0 0 / 7%);
+}
 .theme--dark.v-text-field--solo > .v-input__control > .v-input__slot {
-  background: var(--DarkBackground) !important;
+  background: var(--Sheets) !important;
   color: var(--Text);
 }
 .theme--dark.v-data-table {
-  background-color: var(--DarkBackground) !important;
+  background-color: var(--Sheets) !important;
   color: var(--Text);
 }
 .v-data-table > .v-data-table__wrapper > table {
-  background-color: var(--DarkBackground) !important;
+  background-color: var(--Sheets) !important;
+}
+.v-data-table.event-table.theme--dark table {
+  border-radius: 5px;
 }
 .theme--dark.v-card {
   /*background-color: var(--DarkBackground);*/
