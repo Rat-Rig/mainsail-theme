@@ -53,6 +53,10 @@ nav ul.navi .theme--dark.v-icon {
   color: var(--LightText) !important;
 }
 
+.theme--dark.v-subheader {
+  color: var(--LightText) !important;
+}
+
 /* Buttons */
 .v-chip.v-chip--outlined.v-chip.v-chip {
   background-color: var(--White) !important;
